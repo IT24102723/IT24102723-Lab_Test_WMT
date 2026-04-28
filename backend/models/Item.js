@@ -32,6 +32,12 @@ const itemSchema = new mongoose.Schema(
       required: [true, "Brand name is required"],
       trim: true,
     },
+    stockQuantity: {
+      type: Number,
+      required: [true, "Stock Quantity is required"],
+      min: [0, "Stock Quantity cannot be negative"],
+      default: 0,
+    },
   },
   { timestamps: true }
 );
